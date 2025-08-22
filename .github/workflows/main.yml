@@ -116,8 +116,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repo: prefix-dev/pixi
-          run_id: 17125916085
-          name: pixi-linux-x86_64-b376660c4f48b940d3abf6b266735406a01edfdb
+          run_id: 17154766217
+          name: pixi-linux-x86_64-bab2ca6e35251263496c6aee2ab8f2b4d92d0698
           path: ./pixi-artifact
       - name: Install pixi
         run: |
