@@ -38,7 +38,7 @@ jobs:
           sed -i.bak 's@editable = true@editable = false@g' pixi.toml
           rm pixi.toml.bak
           # Add annotations to github actions
-          pixi add --pypi --feature diracx-core pytest-github-actions-annotate-failures
+          pixi -vv add --pypi --feature diracx-core pytest-github-actions-annotate-failures
           # Show any changes
           git diff
       - name: Setup pixi environment
@@ -90,7 +90,7 @@ jobs:
           export RUST_BACKTRACE=full
           rm pixi.toml.bak
           # Add annotations to github actions
-          pixi add --pypi --feature diracx-core pytest-github-actions-annotate-failures
+          pixi -vv add --pypi --feature diracx-core pytest-github-actions-annotate-failures
           # Show any changes
           git diff
       - name: Setup pixi environment
@@ -130,7 +130,7 @@ jobs:
           sed -i.bak 's@editable = true@editable = false@g' pixi.toml
           rm pixi.toml.bak
           # Add annotations to github actions
-          pixi add --pypi --feature diracx-core pytest-github-actions-annotate-failures
+          pixi -vv add --pypi --feature diracx-core pytest-github-actions-annotate-failures
           # Show any changes
           git diff
       - name: Setup pixi environment
@@ -260,7 +260,7 @@ jobs:
       - name: Apply workarounds
         run: |
           # Add annotations to github actions
-          pixi add --pypi --feature diracx-core pytest-github-actions-annotate-failures
+          pixi -vv add --pypi --feature diracx-core pytest-github-actions-annotate-failures
           # Show any changes
           git diff
       - name: Setup pixi environment
