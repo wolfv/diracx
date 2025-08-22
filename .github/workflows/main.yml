@@ -42,7 +42,7 @@ jobs:
           # Show any changes
           git diff
       - name: Setup pixi environment
-        run: pixi install --environment shellcheck
+        run: pixi -vv install --environment shellcheck
       - name: Run shellcheck
         run: pixi run shellcheck
 
@@ -94,7 +94,7 @@ jobs:
           # Show any changes
           git diff
       - name: Setup pixi environment
-        run: pixi install --environment ${{ matrix.package }}
+        run: pixi -vv install --environment ${{ matrix.package }}
       - name: Run pytest
         run: pixi run pytest-${{ matrix.package }} --cov-report=xml:coverage.xml --junitxml=report.xml
       - name: Upload coverage report
@@ -134,7 +134,7 @@ jobs:
           # Show any changes
           git diff
       - name: Setup pixi environment
-        run: pixi install --environment ${{ matrix.extension == 'diracx' && 'default' || 'default-gubbins' }}
+        run: pixi -vv install --environment ${{ matrix.extension == 'diracx' && 'default' || 'default-gubbins' }}
       - name: Build gubbins wheels
         if: ${{ matrix.extension == 'gubbins' }}
         run: |
@@ -264,6 +264,6 @@ jobs:
           # Show any changes
           git diff
       - name: Setup pixi environment
-        run: pixi install --environment ${{ matrix.package }}-generate-client
+        run: pixi -vv install --environment ${{ matrix.package }}-generate-client
       - name: Run autorest
         run: pixi run -e ${{ matrix.package }}-generate-client generate-client
